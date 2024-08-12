@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './Feedbacks.module.css';
 
-const Feedback = ({ feedbacks, total }) => {
-  const positive = Math.round((feedbacks.good / total) * 100);
+const Feedback = ({ feedbacks, total, positive }) => {
 
   return (
     <>
@@ -26,6 +25,7 @@ Feedback.propTypes = {
     bad: PropTypes.number.isRequired,
   }).isRequired,
   total: PropTypes.number.isRequired,
+  positive: PropTypes.number.isRequired,
 };
 
 export default Feedback;

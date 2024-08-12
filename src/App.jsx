@@ -27,6 +27,7 @@ function App() {
   };
 
   const total = feedbacks.good + feedbacks.neutral + feedbacks.bad;
+  const positive = Math.round((feedbacks.good / total) * 100);
 
   useEffect(() => {
     localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
@@ -41,7 +42,7 @@ function App() {
         reset={reset}
         total={total} />
 
-      {total > 0 && <Feedback feedbacks={feedbacks} total={total} />}
+      {total > 0 && <Feedback feedbacks={feedbacks} total={total} positive={positive} />}
 
       {total === 0 && <Notification />}
     </>
