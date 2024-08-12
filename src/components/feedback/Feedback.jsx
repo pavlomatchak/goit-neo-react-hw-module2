@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import css from './Feedbacks.module.css';
 
 const Feedback = ({ feedbacks, total, positive }) => {
-
   return (
     <>
       <p className={css.item}>Good: {feedbacks.good}</p>
